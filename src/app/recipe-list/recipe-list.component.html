@@ -1,7 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg" *ngFor="let recipe of recipeList">
-            <div class="card card-height">
+        <div class="col-sm">
+            <button type="button" class="btn btn-info" (click)="onAddNewButtonClick()">Add new Recipe</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let recipe of recipeList">
+            <div class="card card-height" [appHighlight]="'springgreen'">
                 <img src="{{recipe.image}}" class="card-img-top" alt="Recipe Image" />
                 <div class="card-body">
                     <h5 class="card-title">{{recipe.name}}
@@ -11,7 +16,9 @@
                     <h6 class="card-subtitle mb-2 text-muted">Made with <img
                             src="https://img.icons8.com/plasticine/30/000000/like.png"> by {{recipe.chef}}
                     </h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <p class="card-text">Lorem Ipsum test data random text typing fastly asaks ansdas asdasd asdkjasdkl
+                        asdajskdklsajda ajdslasd asndnas znfmf askfjklsdnf ajsdklasjd askdjaslkdn asldjlkasdn some quick
+                        example text to build on the card title and make up the bulk of the
                         card's content.</p>
                 </div>
             </div>

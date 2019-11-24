@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSumbit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="recipe-name">Recipe Name</label>
+                <input type="text" class="form-control" id="recipe-name" placeholder="Recipe Name" formControlName="name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="chef">Chef</label>
+                <input type="text" class="form-control" id="chef" placeholder="Chef" formControlName="chef">
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Enter recipe description" formControlName="description">
+        </div> -->
+        <div class="form-group">
+            <label for="recipe-image">Recipe Image URL</label>
+            <input type="text" class="form-control" id="recipe-image" placeholder="Enter recipe url" formControlName="image">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="recipe-type">State</label>
+                <select id="recipe-type" class="form-control" formControlName="type">
+                    <option selected>Select Recipe Type</option>
+                    <option value="v">Vegeterian</option>
+                    <option value="nv">Non-Vegeterian</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Sign in</button>
+    </form>
+</div>
