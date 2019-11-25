@@ -5,9 +5,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3" *ngFor="let recipe of recipeList">
+            <div class="col-sm-4" *ngFor="let recipe of recipeList">
             <div class="card card-height" [appHighlight]="'springgreen'">
-                <img src="{{recipe.image}}" class="card-img-top" alt="Recipe Image" />
+                <img [src]="recipe.image" class="card-img-top img-fluid img-thumbnail" style="height: 300px;" alt="Recipe Image" />
                 <div class="card-body">
                     <h5 class="card-title">{{recipe.name}}
                         <img
