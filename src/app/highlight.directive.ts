@@ -19,5 +19,6 @@ export class HighlightDirective {
 
   private highlight(color: string) {
     this.elementRef.nativeElement.style.backgroundColor = color;
+    this.elementRef.nativeElement.style.cursor = 'pointer';
   }
 }
