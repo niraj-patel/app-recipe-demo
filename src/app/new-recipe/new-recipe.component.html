@@ -20,14 +20,14 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="recipe-type">Recipe Type</label>
+                <label for="recipe-type">Recipe-Type</label>
                 <select id="recipe-type" class="form-control" formControlName="type">
-                    <option selected>Select Recipe Type</option>
+                    <option selected value="">Select Recipe Type</option>
                     <option value="v">Vegeterian</option>
                     <option value="nv">Non-Vegeterian</option>
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Sign in</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
     </form>
 </div>
