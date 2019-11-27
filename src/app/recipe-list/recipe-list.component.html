@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px">
         <div class="col-sm">
             <button type="button" class="btn btn-info" (click)="onAddNewButtonClick()">Add new Recipe</button>
         </div>
     </div>
     <div class="row">
-            <div class="col-sm-4" *ngFor="let recipe of recipeList">
+            <div class="col-sm-4" style="margin-bottom: 15px" *ngFor="let recipe of recipeList">
             <div class="card card-height" [appHighlight]="'springgreen'">
                 <img [src]="recipe.image" class="card-img-top img-fluid img-thumbnail" style="height: 300px;" alt="Recipe Image" />
                 <div class="card-body">
