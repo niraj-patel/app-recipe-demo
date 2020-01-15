@@ -1,15 +1,14 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { RecipeService } from '../data.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-recipe',
-  templateUrl: './new-recipe.component.html',
-  styleUrls: ['./new-recipe.component.scss']
+  templateUrl: './new-recipe.component.html'
 })
 
-export class NewRecipeComponent implements OnInit {
+export class NewRecipeComponent {
   form: FormGroup;
 
   constructor(formBuilder: FormBuilder, private dataService: RecipeService, private router: Router) {
@@ -21,12 +20,12 @@ export class NewRecipeComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
   onSumbit() {
     this.dataService.addRecipe(this.form.value);
     this.router.navigate(['']);
   }
 
+  onCancelClick() {
+    this.router.navigate(['']);
+  }
 }

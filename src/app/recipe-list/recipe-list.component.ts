@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecipeService } from '../data.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,16 +10,22 @@ import { RecipeService } from '../data.service';
 })
 export class RecipeListComponent implements OnInit {
   @Input() recipeList: any = [];
-  @Output() onChangeView = new EventEmitter();
-  constructor(private router: Router, private dataService: RecipeService) {
+
+  constructor(private router: Router, private dataService: RecipeService, private authService: AuthService) {
   }
 
   ngOnInit() {
-    this.recipeList = this.dataService.recipeList
+    this.recipeList = this.dataService.recipeList;
+    console.log(this.authService.authenticate());
   }
 
   onAddNewButtonClick() {
-    this.router.navigate(['add-recipe']);
+    console.log(this.authService.authenticate())
+    if (this.authService.authenticate()) {
+      this.router.navigate(['add-recipe']);
+    } else {
+      this.router.navigate(['login']);
+    }
   }
 
 }
