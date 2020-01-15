@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HighlightDirective } from './highlight.directive';
 import { LoginComponent } from './login/login.component';
 import { LoggerService } from './logger.service';
@@ -24,7 +24,8 @@ import { AuthGuardService } from './auth-guard.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     LoggerService,

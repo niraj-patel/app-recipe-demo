@@ -28,4 +28,10 @@ export class RecipeListComponent implements OnInit {
     }
   }
 
+  onFavouriteClick() {
+    this.recipeList = this.dataService.recipeList.filter((value) => {
+      return (value.isFavourite === true);
+    });
+  }
+
 }

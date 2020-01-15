@@ -1,9 +1,17 @@
 <div class="container">
-    <div class="row" style="margin-bottom: 20px">
-        <div class="col-sm">
-            <button type="button" class="btn btn-info" (click)="onAddNewButtonClick()">Add new Recipe</button>
+    <form>
+        <div class="form-row" style="margin-bottom: 20px">
+            <div>
+            <button type="button" class="btn btn-info" style="margin-right: 20px;" (click) = "onAddNewButtonClick()">Add new Recipe</button>
+            </div>
+            <div>
+            <button type="button" class="btn btn-info" style="margin-right: 20px;" (click)="onFavouriteClick()">Favourites</button>
+            </div>
+            <div class="col-sm-9">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search...">
+            </div>
         </div>
-    </div>
+    </form>
     <div class="row">
             <div class="col-sm-4" style="margin-bottom: 15px" *ngFor="let recipe of recipeList">
             <div class="card card-height" [appHighlight]="'springgreen'">

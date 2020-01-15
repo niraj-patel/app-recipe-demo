@@ -11,7 +11,7 @@ export class RecipeService {
       chef: 'Ranveer Brar',
       image: 'http://salemdigest.com/wp-content/uploads/2016/08/TITS_food1.jpg',
       type: 'nv',
-      isFavourite: false
+      isFavourite: true
     },
     {
       recipeId: 2,
@@ -27,7 +27,7 @@ export class RecipeService {
       chef: 'Nisha Madhulika',
       image: 'http://eatbook.sg/wp-content/uploads/2018/06/Century-Square-Food-Two-Hana.jpg',
       type: 'nv',
-      isFavourite: false
+      isFavourite: true
     },
     {
       recipeId: 4,
