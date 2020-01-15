@@ -7,6 +7,8 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HighlightDirective } from './highlight.directive';
+import { LoggerService } from './logger.service';
+import { RecipeService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,17 @@ import { HighlightDirective } from './highlight.directive';
     RecipeListComponent,
     NewRecipeComponent,
     HighlightDirective,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    LoggerService,
+    RecipeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

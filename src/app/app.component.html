@@ -1,8 +1,5 @@
 <div class="container-fluid">
   <div class="jumbotron jumbotron-background">
-    <!-- <img src="../assets/images/background-medium.jpg"/> -->
   </div>
-    <app-recipe-list *ngIf="shouldShowList" [recipeList]="recipeList" (onChangeView)="handleViewChange($event)">
-    </app-recipe-list>
-    <app-new-recipe *ngIf="!shouldShowList" (onNewRecipeFormSubmitted)="handleFromSubmit($event)"></app-new-recipe>
+    <router-outlet></router-outlet>
 </div>

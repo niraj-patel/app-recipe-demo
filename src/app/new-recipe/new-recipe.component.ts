@@ -1,15 +1,18 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { RecipeService } from '../data.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-new-recipe',
   templateUrl: './new-recipe.component.html',
   styleUrls: ['./new-recipe.component.scss']
 })
+
 export class NewRecipeComponent implements OnInit {
   form: FormGroup;
-  @Output() onNewRecipeFormSubmitted = new EventEmitter();
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: FormBuilder, private dataService: RecipeService, private router: Router) {
     this.form = formBuilder.group({
       "name": ["", Validators.required],
       "chef": ["", Validators.required],
@@ -22,7 +25,8 @@ export class NewRecipeComponent implements OnInit {
   }
 
   onSumbit() {
-    this.onNewRecipeFormSubmitted.emit(this.form.value);
+    this.dataService.addRecipe(this.form.value);
+    this.router.navigate(['']);
   }
 
 }

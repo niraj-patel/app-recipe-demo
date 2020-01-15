@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { RecipeService } from '../data.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,14 +10,15 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class RecipeListComponent implements OnInit {
   @Input() recipeList: any = [];
   @Output() onChangeView = new EventEmitter();
-  constructor() {
+  constructor(private router: Router, private dataService: RecipeService) {
   }
 
   ngOnInit() {
+    this.recipeList = this.dataService.recipeList
   }
 
   onAddNewButtonClick() {
-    this.onChangeView.emit(false);
+    this.router.navigate(['add-recipe']);
   }
 
 }
