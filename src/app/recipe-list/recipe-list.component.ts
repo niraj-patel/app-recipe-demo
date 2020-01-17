@@ -11,16 +11,20 @@ import { AuthService } from '../auth.service';
 export class RecipeListComponent implements OnInit {
   @Input() recipeList: any = [];
 
+  favouriteList = this.dataService.recipeList.filter((recipe) => {
+    return recipe.isFavourite;
+  });
+
+  labelTitle = 'Favourites';
+
   constructor(private router: Router, private dataService: RecipeService, private authService: AuthService) {
   }
 
   ngOnInit() {
-    this.recipeList = this.dataService.recipeList;
-    console.log(this.authService.authenticate());
+    this.recipeList = this.favouriteList;
   }
 
   onAddNewButtonClick() {
-    console.log(this.authService.authenticate())
     if (this.authService.authenticate()) {
       this.router.navigate(['add-recipe']);
     } else {
@@ -28,10 +32,11 @@ export class RecipeListComponent implements OnInit {
     }
   }
 
-  onFavouriteClick() {
-    this.recipeList = this.dataService.recipeList.filter((value) => {
-      return (value.isFavourite === true);
-    });
+  onSearch(value) {
+      this.recipeList = (value.length > 0) ? this.dataService.recipeList.filter((recipe) => {
+        return recipe.name.toLowerCase().includes(value.toLowerCase());
+      }) : this.recipeList = this.favouriteList;
+      this.labelTitle = (value.length === 0) ? 'Favourites' : 'Search results for "' + value + '"';
   }
 
 }

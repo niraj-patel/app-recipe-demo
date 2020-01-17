@@ -5,13 +5,16 @@
             <button type="button" class="btn btn-info" style="margin-right: 20px;" (click) = "onAddNewButtonClick()">Add new Recipe</button>
             </div>
             <div>
-            <button type="button" class="btn btn-info" style="margin-right: 20px;" (click)="onFavouriteClick()">Favourites</button>
+            <button type="button" class="btn btn-info" style="margin-right: 20px;" (click)="onFavouriteClick()">All Recipes</button>
             </div>
             <div class="col-sm-9">
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search...">
+            <input type="text" class="form-control" placeholder="Search..." #searchValue (input)='onSearch(searchValue.value)'>
             </div>
         </div>
     </form>
+    <div>
+        <h4 style="margin-bottom: 20px; margin-top: 50px;">{{labelTitle}}</h4>
+    </div>
     <div class="row">
             <div class="col-sm-4" style="margin-bottom: 15px" *ngFor="let recipe of recipeList">
             <div class="card card-height" [appHighlight]="'springgreen'">
