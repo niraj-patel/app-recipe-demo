@@ -1,0 +1,22 @@
+<router-outlet></router-outlet>
+<div class="container" style="text-align: center; margin-bottom: 80px; margin-top: 50px;"><h1>My Recipe</h1></div>
+<div class="row">
+<div class="col-sm-3 offset-md-1" (click)="showRecipeDetail()">
+    <div class="col-sm" style="margin-bottom: 15px" *ngFor="let recipe of recipeList">
+    <div class="card card-height" [appHighlight]="'springgreen'">
+         <div class="card-body">
+            <h5 class="card-title">{{recipe.name}}
+                <img
+                    src="{{recipe.type === 'v' ? 'https://img.icons8.com/cute-clipart/30/000000/vegetarian-food-symbol.png' : 'https://img.icons8.com/cute-clipart/30/000000/non-vegetarian-food-symbol.png' }}" />
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted" style="margin-bottom: 10px;">Made with <img
+                    src="https://img.icons8.com/plasticine/30/000000/like.png"> by {{recipe.chef}}
+            </h6>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-7">
+    <app-recipe-cell></app-recipe-cell>
+</div>
+</div>

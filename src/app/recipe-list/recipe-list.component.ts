@@ -32,6 +32,10 @@ export class RecipeListComponent implements OnInit {
     }
   }
 
+  onAllRecipeClick() {
+    this.router.navigate(['all-recipes']);
+  }
+
   onSearch(value) {
       this.recipeList = (value.length > 0) ? this.dataService.recipeList.filter((recipe) => {
         return recipe.name.toLowerCase().includes(value.toLowerCase());

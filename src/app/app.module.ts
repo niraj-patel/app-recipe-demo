@@ -12,6 +12,8 @@ import { LoggerService } from './logger.service';
 import { RecipeService } from './data.service';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
+import { AllRecipeComponent } from './all-recipe/all-recipe.component';
+import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AuthGuardService } from './auth-guard.service';
     NewRecipeComponent,
     HighlightDirective,
     LoginComponent,
+    AllRecipeComponent,
+    RecipeCellComponent,
   ],
   imports: [
     BrowserModule,
