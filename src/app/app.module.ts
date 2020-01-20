@@ -14,6 +14,7 @@ import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { AllRecipeComponent } from './all-recipe/all-recipe.component';
 import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
     LoginComponent,
     AllRecipeComponent,
     RecipeCellComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
