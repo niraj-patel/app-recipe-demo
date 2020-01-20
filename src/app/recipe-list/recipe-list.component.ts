@@ -17,23 +17,11 @@ export class RecipeListComponent implements OnInit {
 
   labelTitle = 'Favourites';
 
-  constructor(private router: Router, private dataService: RecipeService, private authService: AuthService) {
+  constructor(private router: Router, private dataService: RecipeService) {
   }
 
   ngOnInit() {
     this.recipeList = this.favouriteList;
-  }
-
-  onAddNewButtonClick() {
-    if (this.authService.authenticate()) {
-      this.router.navigate(['add-recipe']);
-    } else {
-      this.router.navigate(['login']);
-    }
-  }
-
-  onAllRecipeClick() {
-    this.router.navigate(['all-recipes']);
   }
 
   onSearch(value) {

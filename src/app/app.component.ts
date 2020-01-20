@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LoggerService } from './logger.service';
 import { RecipeService } from './data.service';
-import { Recipe } from './recipe';
 import { Router } from '@angular/router';
 
 @Component({

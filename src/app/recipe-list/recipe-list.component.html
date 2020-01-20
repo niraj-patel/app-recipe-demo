@@ -1,12 +1,6 @@
 <div class="container">
     <form>
-        <div class="form-row" style="margin-bottom: 20px">
-            <div>
-            <button type="button" class="btn btn-info" style="margin-right: 20px;" (click) = "onAddNewButtonClick()">Add new Recipe</button>
-            </div>
-            <div>
-            <button type="button" class="btn btn-info" style="margin-right: 20px;" (click)="onAllRecipeClick()">All Recipes</button>
-            </div>
+        <div class="form-row" style="margin-bottom: 20px; margin-top: 2%;">
             <div class="col-sm-9">
             <input type="text" class="form-control" placeholder="Search..." #searchValue (input)='onSearch(searchValue.value)'>
             </div>
