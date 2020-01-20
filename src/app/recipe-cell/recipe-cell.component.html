@@ -1,1 +1,27 @@
-<p>Cell</p>
+<div class="row">
+    <div class="col-sm-4" style="margin-bottom: 15px">
+    <div class="card card-height" [appHighlight]="'springgreen'">
+        <div class="container" style="position: relative;">
+            <img [src]="recipe.image" class="card-img-top img-fluid img-thumbnail" style="height: 300px;" alt="Recipe Image" />
+            <div class="top-right">
+                
+                <img
+                    src="{{recipe.isFavourite == true ? 'https://img.icons8.com/color/48/000000/hearts.png' : 'https://img.icons8.com/small/48/000000/hearts.png' }}" style="position: absolute; right: 35px; top: 20px; height: 50px; width: 50px;"  (click) = "onFavouriteClick()"/>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{recipe.name}}
+                <img
+                    src="{{recipe.type === 'v' ? 'https://img.icons8.com/cute-clipart/30/000000/vegetarian-food-symbol.png' : 'https://img.icons8.com/cute-clipart/30/000000/non-vegetarian-food-symbol.png' }}" />
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Made with <img
+                    src="https://img.icons8.com/plasticine/30/000000/like.png"> by {{recipe.chef}}
+            </h6>
+            <p class="card-text">Lorem Ipsum test data random text typing fastly asaks ansdas asdasd asdkjasdkl
+                asdajskdklsajda ajdslasd asndnas znfmf askfjklsdnf ajsdklasjd askdjaslkdn asldjlkasdn some quick
+                example text to build on the card title and make up the bulk of the
+                card's content.</p>
+        </div>
+    </div>
+</div>
+</div>

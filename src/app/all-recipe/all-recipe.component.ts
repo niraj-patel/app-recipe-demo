@@ -10,16 +10,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AllRecipeComponent implements OnInit {
 
   recipeList = this.dataService.recipeList;
+  recipe = this.dataService.recipeList[0];
 
   constructor(private dataService: RecipeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(value => {
-      console.log(value)
-    })
   }
 
-  showRecipeDetail() {
-    this.router.navigate(['/all-recipes'], { queryParams: { id: '1' } });
+  showRecipeDetail(value) {
+    this.recipe = value;
+    this.router.navigate(['/all-recipes'], { queryParams: { id: value.recipeId } });
   }
 }

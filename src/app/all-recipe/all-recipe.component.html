@@ -1,9 +1,9 @@
 <router-outlet></router-outlet>
 <div class="container" style="text-align: center; margin-bottom: 80px; margin-top: 50px;"><h1>My Recipe</h1></div>
 <div class="row">
-<div class="col-sm-3 offset-md-1" (click)="showRecipeDetail()">
+<div class="col-sm-3 offset-md-1">
     <div class="col-sm" style="margin-bottom: 15px" *ngFor="let recipe of recipeList">
-    <div class="card card-height" [appHighlight]="'springgreen'">
+    <div class="card card-height" [appHighlight]="'springgreen'" (click)="showRecipeDetail(recipe)">
          <div class="card-body">
             <h5 class="card-title">{{recipe.name}}
                 <img
@@ -16,7 +16,7 @@
     </div>
 </div>
 </div>
-<div class="col-sm-7">
-    <app-recipe-cell></app-recipe-cell>
+<div class="col-sm-7 offset-md-1">
+    <app-recipe-cell [recipe] = "recipe"></app-recipe-cell>
 </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe';
-import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../data.service';
 
 @Component({
   selector: 'app-recipe-cell',
@@ -8,18 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./recipe-cell.component.scss']
 })
 
-export class RecipeCellComponent implements OnInit {
-// @Input() recipe: Recipe;
+export class RecipeCellComponent {
+@Input() recipe: Recipe;
 
-  constructor(private route: ActivatedRoute) {
-    // console.log(this.route.snapshot.data);
+  constructor(private dataService: RecipeService) { }
+
+  onFavouriteClick() {
+    this.dataService.recipeList = this.dataService.recipeList.filter((recipe) => {
+      if (recipe.recipeId === this.recipe.recipeId) {
+        recipe.isFavourite = !recipe.isFavourite;
+        this.recipe.isFavourite = recipe.isFavourite;
+      }
+      return recipe;
+    });
   }
-
-  ngOnInit() {
-    const id = this.route.snapshot.params['id'];
-    console.log(id);
-    // this.route.params.subscribe(params => console.log(params));
-    console.log("in cell");
-  }
-
 }
