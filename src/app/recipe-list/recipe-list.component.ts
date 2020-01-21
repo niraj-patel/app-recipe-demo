@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecipeService } from '../data.service';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -16,6 +15,7 @@ export class RecipeListComponent implements OnInit {
   });
 
   labelTitle = 'Favourites';
+  showNoResult = false;
 
   constructor(private router: Router, private dataService: RecipeService) {
   }
@@ -25,10 +25,16 @@ export class RecipeListComponent implements OnInit {
   }
 
   onSearch(value) {
-      this.recipeList = (value.length > 0) ? this.dataService.recipeList.filter((recipe) => {
+    if (value.length > 0) {
+      this.recipeList = this.dataService.recipeList.filter((recipe) => {
         return recipe.name.toLowerCase().includes(value.toLowerCase());
-      }) : this.recipeList = this.favouriteList;
-      this.labelTitle = (value.length === 0) ? 'Favourites' : 'Search results for "' + value + '"';
+      });
+      this.labelTitle = 'Search results for "' + value + '"';
+      this.showNoResult = this.recipeList.length === 0;
+    } else {
+      this.recipeList = this.favouriteList;
+      this.labelTitle = 'Favourites';
+    }
   }
 
 }
