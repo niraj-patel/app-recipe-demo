@@ -8,7 +8,7 @@ import { RecipeCellComponent } from './components/recipe-cell/recipe-cell.compon
 import { resolve } from 'url';
 import { RecipeResolveService } from './services/recipe-resolve.service';
 import { AuthGuardService } from './services/auth-guard.service';
-
+import {PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', component: RecipeListComponent},
@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: 'all-recipes', component: AllRecipeComponent, children: [
     { path: ':id', component: RecipeCellComponent, resolve: { id: RecipeResolveService } }
   ]},
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({

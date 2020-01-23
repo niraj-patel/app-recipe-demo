@@ -1,7 +1,7 @@
 <div class="container">
     <form>
         <div class="form-row" style="margin-bottom: 20px; margin-top: 2%;">
-            <div class="col-sm-9">
+            <div class="col-sm-12">
             <input type="text" class="form-control" placeholder="Search..." #searchValue (input)='onSearch(searchValue.value)'>
             </div>
         </div>
@@ -28,5 +28,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="showNoResult">
+        <img src="../../assets/images/noResult.png" class="col-md-8 offset-md-2" />
     </div>
 </div>

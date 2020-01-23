@@ -15,6 +15,6 @@ export class LoginComponent implements OnInit {
 
   onLoginClick() {
     this.authservice.loggedIn(true);
-    this.router.navigate(['']);
+    this.router.navigate(['/add-recipe']);
   }
 }
