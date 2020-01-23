@@ -26,7 +26,7 @@ export class RecipeListComponent implements OnInit {
 
   onSearch(value) {
     if (value.length > 0) {
-      this.recipeList = this.dataService.recipeList.filter((recipe) => {
+      this.recipeList = this.favouriteList.filter((recipe) => {
         return recipe.name.toLowerCase().includes(value.toLowerCase());
       });
       this.labelTitle = 'Search results for "' + value + '"';
