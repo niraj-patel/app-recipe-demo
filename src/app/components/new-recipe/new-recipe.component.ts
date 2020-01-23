@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { RecipeService } from '../data.service';
+import { RecipeService } from '../../services/data.service';
 import { Router } from '@angular/router';
 
 @Component({

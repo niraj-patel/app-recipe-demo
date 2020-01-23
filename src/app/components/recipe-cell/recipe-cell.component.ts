@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recipe } from '../recipe';
-import { RecipeService } from '../data.service';
+import { Recipe } from '../../models/recipe';
+import { RecipeService } from '../../services/data.service';
 
 @Component({
   selector: 'app-recipe-cell',

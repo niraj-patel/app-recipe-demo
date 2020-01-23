@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../data.service';
+import { RecipeService } from '../../services/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

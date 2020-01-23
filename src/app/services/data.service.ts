@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoggerService } from './logger.service';
-import { Recipe } from './recipe';
+import { Recipe } from '../models/recipe';
 
 @Injectable()
 export class RecipeService {

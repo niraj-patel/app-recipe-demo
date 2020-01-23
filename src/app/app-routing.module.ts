@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { NewRecipeComponent } from './new-recipe/new-recipe.component';
-import { AllRecipeComponent } from './all-recipe/all-recipe.component';
-import { RecipeCellComponent } from './recipe-cell/recipe-cell.component';
+import { LoginComponent } from './components/login/login.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { AllRecipeComponent } from './components/all-recipe/all-recipe.component';
+import { RecipeCellComponent } from './components/recipe-cell/recipe-cell.component';
 import { resolve } from 'url';
-import { RecipeResolveService } from './recipe-resolve.service';
-import { AuthGuardService } from './auth-guard.service';
+import { RecipeResolveService } from './services/recipe-resolve.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [

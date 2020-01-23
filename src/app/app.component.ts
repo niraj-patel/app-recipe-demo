@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LoggerService } from './logger.service';
-import { RecipeService } from './data.service';
+import { RecipeService } from './services/data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'recipe-app';
   recipeList = [];
 
-  constructor(private logger: LoggerService, private dataService: RecipeService, private router: Router) { }
+  constructor(private dataService: RecipeService) { }
 
   ngOnInit() {
     this.recipeList = this.dataService.recipeList;
